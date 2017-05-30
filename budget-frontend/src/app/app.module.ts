@@ -3,10 +3,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { InputTextModule, MenuModule, PanelMenuModule} from 'primeng/primeng';
+import { RouterModule } from '@angular/router';
+
+import { ButtonModule, InputTextModule, MenuModule, PanelMenuModule} from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
+import {budget_routes} from './controller/budget.routes';
 
 import { MonthlyBillsComponent } from './views/monthly-bills/monthly-bills.component';
 
@@ -19,12 +22,14 @@ import { MonthlyBillsComponent } from './views/monthly-bills/monthly-bills.compo
   ],
   imports: [
     BrowserModule,
+    ButtonModule,
     FormsModule,
     HttpModule,
     InputTextModule,
     MenuModule,
     PanelMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(budget_routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

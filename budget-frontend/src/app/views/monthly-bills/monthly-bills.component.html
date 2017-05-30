@@ -1,0 +1,58 @@
+<div class="ui-g-12">
+  <form (ngSubmit)="onSubmit()" #monthlyBillForm="ngForm">
+    <div class="ui-g-9">
+      <label for="name">Name</label><br/>
+      <input id="name"
+             pInputText
+             [(ngModel)]="monthlyBill.name"
+             name="name"
+             required
+             #name="ngModel"
+      />
+    </div>
+    <br/>
+    <div class="ui-g-9">
+      <label for="description">Description</label><br/>
+      <input id="description"
+             pInputText
+             [(ngModel)]="monthlyBill.description"
+             name="description"
+             required
+             #description="ngModel"
+      />
+    </div>
+    <br/>
+    <div class="ui-g-9">
+      <label for="payment">Payment Amount</label><br/>
+      <input id="payment"
+             pInputText
+             [(ngModel)]="monthlyBill.payment"
+             name="payment"
+             required
+             #payment="ngModel"
+      />
+    </div>
+    <br/>
+    <div class="ui-g-9">
+      <label for="paymentDate">Payment Date</label><br/>
+      <input id="paymentDate"
+             pInputText
+             [(ngModel)]="monthlyBill.paymentDate"
+             name="paymentDate"
+             required
+             #paymentDate="ngModel"
+      />
+    </div>
+    <div class="ui-g-4">
+      <input type="submit" pButton label="Submit"/>
+    </div>
+    <div class="ui-g-1">
+      &nbsp;
+    </div>
+    <div class="ui-g-4">
+      <input type="reset" pButton label="Reset"/>
+    </div>
+
+  </form>
+
+</div>
