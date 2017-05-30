@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -29,6 +29,7 @@ import { MonthlyBillsComponent } from './views/monthly-bills/monthly-bills.compo
     MenuModule,
     PanelMenuModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(budget_routes)
   ],
   providers: [],

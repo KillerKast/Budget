@@ -3,15 +3,15 @@ export class MonthlyBill {
   private __id: number;
   private __name: string;
   private __description: string;
-  private __payment: number;
+  private __paymentAmount: number;
   private __paymentDate: number;
 
   constructor(name?: string, description?: string,
-              payment?: number, paymentDate?: number){
+              paymentAmount?: number, paymentDate?: number){
 
     this.__name = name || '';
     this.__description = description || '';
-    this.__payment = payment || 0;
+    this.__paymentAmount = paymentAmount || 0;
     this.__paymentDate = paymentDate || 0;
   }
 
@@ -33,11 +33,11 @@ export class MonthlyBill {
     this.__description = theDescription;
   }
 
-  get payment() : number {
-    return this.__payment;
+  get paymentAmount() : number {
+    return this.__paymentAmount;
   }
-  set payment(thePayment : number){
-    this.__payment = thePayment;
+  set paymentAmount(thePaymentAmount : number){
+    this.__paymentAmount = thePaymentAmount;
   }
 
   get paymentDate() : number {
@@ -47,4 +47,10 @@ export class MonthlyBill {
     this.__paymentDate = thePaymentDate;
   }
 
+  updateMonthlyBill(mb: MonthlyBill){
+    this.__name = mb.name;
+    this.__description = mb.description;
+    this.__paymentAmount = mb.paymentAmount;
+    this.__paymentDate = mb.paymentDate;
+  }
 }

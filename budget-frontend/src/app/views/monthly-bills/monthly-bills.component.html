@@ -1,13 +1,10 @@
 <div class="ui-g-12">
-  <form (ngSubmit)="onSubmit()" #monthlyBillForm="ngForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="monthlyBillForm">
     <div class="ui-g-9">
       <label for="name">Name</label><br/>
       <input id="name"
              pInputText
-             [(ngModel)]="monthlyBill.name"
-             name="name"
-             required
-             #name="ngModel"
+             formControlName="name"
       />
     </div>
     <br/>
@@ -15,21 +12,15 @@
       <label for="description">Description</label><br/>
       <input id="description"
              pInputText
-             [(ngModel)]="monthlyBill.description"
-             name="description"
-             required
-             #description="ngModel"
+             formControlName="description"
       />
     </div>
     <br/>
     <div class="ui-g-9">
-      <label for="payment">Payment Amount</label><br/>
-      <input id="payment"
+      <label for="paymentAmount">Payment Amount</label><br/>
+      <input id="paymentAmount"
              pInputText
-             [(ngModel)]="monthlyBill.payment"
-             name="payment"
-             required
-             #payment="ngModel"
+             formControlName="paymentAmount"
       />
     </div>
     <br/>
@@ -37,20 +28,18 @@
       <label for="paymentDate">Payment Date</label><br/>
       <input id="paymentDate"
              pInputText
-             [(ngModel)]="monthlyBill.paymentDate"
-             name="paymentDate"
-             required
-             #paymentDate="ngModel"
+             formControlName="paymentDate"
       />
     </div>
+
     <div class="ui-g-4">
-      <input type="submit" pButton label="Submit"/>
+      <button pButton type="submit" label="Save"></button>
     </div>
     <div class="ui-g-1">
-      &nbsp;
+      &nbsp;      &nbsp;
     </div>
     <div class="ui-g-4">
-      <input type="reset" pButton label="Reset"/>
+      <button type="reset" pButton label="Reset"></button>
     </div>
 
   </form>

@@ -6,6 +6,11 @@ html, body, .page{
 
 .header{
   height:10%;
+  min-height:100px;
+  margin-top: 10px;
+  margin-botton: 5px;
+  margin-left:10px;
+  margin-right:10px;
 }
 
 .middle{
