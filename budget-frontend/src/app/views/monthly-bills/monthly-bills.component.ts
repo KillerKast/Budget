@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MonthlyBill} from '../../Model/DomainImplementations/monthly-bill'
+import {MonthlyBill} from '../../model/domain_implementations/monthly-bill'
 
 @Component({
   selector: 'budget-monthly-bills',
