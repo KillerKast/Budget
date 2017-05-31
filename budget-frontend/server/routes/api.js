@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   console.log('this has loaded');
+
   res.send({testString: 'api works'});
 }).post('/create-bill', (req, res) => {
 //  console.log(req);

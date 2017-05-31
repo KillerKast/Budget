@@ -29,7 +29,11 @@
     "font-awesome": "^4.7.0",
     "express": "^4.15.3",
     "body-parser": "^1.17.2",
-    "ng2-validation": "^4.2.0"
+    "ng2-validation": "^4.2.0",
+    "sequelize":"^3.30.4",
+    "sequelize-typescript": "^0.3.1",
+    "reflect-metadata": "^0.1.10"
+
   },
   "devDependencies": {
     "@angular/cli": "1.0.3",
