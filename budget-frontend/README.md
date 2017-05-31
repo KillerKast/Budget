@@ -1,4 +1,5 @@
 # BudgetFrontend
+This application is a project, that I am generating to learn Angular2. At the same time while learning Angular2, I am trying to design this to be a fully functional budget application.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 

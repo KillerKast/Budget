@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {MonthlyBill} from '../../model/domain_implementations/monthly-bill'
+import {Component, OnInit} from "@angular/core";
+import {MonthlyBill} from "../../model/domain_implementations/monthly-bill";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {CustomValidators} from "ng2-validation";
 
 @Component({
   selector: 'budget-monthly-bills',
@@ -10,24 +11,29 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class MonthlyBillsComponent implements OnInit {
 
   monthlyBill: MonthlyBill = new MonthlyBill();
-  monthlyBillForm : FormGroup;
+  monthlyBillForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
+    this.buildForm();
+  }
 
+  buildForm() {
     this.monthlyBillForm = this.fb.group({
-      name: ['', [<any>Validators.required]],
-      description: ['', [<any>Validators.required]],
-      paymentAmount: ['', [<any>Validators.required]],
-      paymentDate: ['', [<any>Validators.required]]
+      name: [this.monthlyBill.name, [<any>Validators.required]],
+      description: [this.monthlyBill.description, [<any>Validators.required]],
+      paymentAmount: [this.monthlyBill.paymentAmount, [Validators.required, CustomValidators.number]],
+      paymentDate: [this.monthlyBill.paymentDate,
+        [Validators.required,
+          CustomValidators.digits,
+          CustomValidators.min(1), CustomValidators.max(31)]]
     });
   }
 
-  onSubmit(){
-    console.log(this.monthlyBillForm);
- //   this.monthlyBill = this.monthlyBillForm.value;
+  onSubmit() {
     this.monthlyBill.updateMonthlyBill(this.monthlyBillForm.value);
     console.log(this.monthlyBill);
     console.log("Submitted");

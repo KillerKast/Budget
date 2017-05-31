@@ -8,7 +8,7 @@ import {MenuItem} from "primeng/primeng";
 })
 export class MenuComponent implements OnInit {
 
-  private items: MenuItem[];
+  public items: MenuItem[];
 
   constructor() {
   }
@@ -19,8 +19,8 @@ export class MenuComponent implements OnInit {
       items: [
         {label: 'Bills',
           items: [
-            {label: 'Monthly', routerLink: ['/monthly-bills']},
-            {label: 'Yearly'},
+            {label: 'Monthly', routerLink: ['/monthly-bill']},
+            {label: 'Yearly', routerLink: ['/yearly-bill']},
             {label: 'One Time'}
           ]
         },

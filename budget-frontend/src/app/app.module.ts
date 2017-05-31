@@ -12,13 +12,15 @@ import { HeaderComponent } from './header/header.component';
 import {budget_routes} from './controller/budget.routes';
 
 import { MonthlyBillsComponent } from './views/monthly-bills/monthly-bills.component';
+import {YearlyBillsComponent} from "./views/yearly-bills/yearly-bills.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HeaderComponent,
-    MonthlyBillsComponent
+    MonthlyBillsComponent,
+    YearlyBillsComponent
   ],
   imports: [
     BrowserModule,
