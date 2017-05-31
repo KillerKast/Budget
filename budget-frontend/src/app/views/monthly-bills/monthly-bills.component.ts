@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {MonthlyBill} from "../../model/domain_implementations/monthly-bill";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CustomValidators} from "ng2-validation";
+import {BillHttpService} from "../../service/bill-http.service";
 
 @Component({
   selector: 'budget-monthly-bills',
@@ -14,7 +15,7 @@ export class MonthlyBillsComponent implements OnInit {
   monthlyBillForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private billService: BillHttpService) {
   }
 
   ngOnInit() {
@@ -35,6 +36,8 @@ export class MonthlyBillsComponent implements OnInit {
 
   onSubmit() {
     this.monthlyBill.updateMonthlyBill(this.monthlyBillForm.value);
+    this.billService.testBillHttp();
+    this.billService.createBill(this.monthlyBill, 'monthly-bill');
     console.log(this.monthlyBill);
     console.log("Submitted");
   }

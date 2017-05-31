@@ -17,6 +17,7 @@ import {budget_routes} from './controller/budget.routes';
 import { MonthlyBillsComponent } from './views/monthly-bills/monthly-bills.component';
 import {YearlyBillsComponent} from "./views/yearly-bills/yearly-bills.component";
 import {OneTimeBillComponent} from "./views/one-time-bill/one-time-bill.component";
+import {BillHttpService} from "./service/bill-http.service";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import {OneTimeBillComponent} from "./views/one-time-bill/one-time-bill.componen
     ReactiveFormsModule,
     RouterModule.forRoot(budget_routes)
   ],
-  providers: [],
+  providers: [BillHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

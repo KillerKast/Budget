@@ -8,4 +8,8 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
+router.post('/create-bill', (req, res) => {
+  console.log(req);
+});
+
 module.exports = router;
