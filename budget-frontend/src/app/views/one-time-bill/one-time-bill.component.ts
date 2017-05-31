@@ -30,7 +30,7 @@ export class OneTimeBillComponent implements OnInit {
   }
 
   onSubmit() {
-    this.oneTimeBill.updateOneTimeBill(this.oneTimeBillForm.value);
+    this.oneTimeBill.updateBill(this.oneTimeBillForm.value);
     console.log(this.oneTimeBill);
     console.log("Submitted");
   }

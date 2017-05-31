@@ -5,11 +5,12 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('api works');
-});
-
-router.post('/create-bill', (req, res) => {
-  console.log(req);
+  console.log('this has loaded');
+  res.send({testString: 'api works'});
+}).post('/create-bill', (req, res) => {
+//  console.log(req);
+  console.log(req.body);
+  res.send({testString: 'create bill works kindof'});
 });
 
 module.exports = router;

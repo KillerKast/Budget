@@ -22,8 +22,19 @@ export class OneTimeBill extends Bill{
     this.__paymentDate = thePaymentDate;
   }
 
-  updateOneTimeBill(otb: OneTimeBill){
-    this.updateBill(otb);
+  updateBill(otb: OneTimeBill){
+    super.updateBill(otb);
     this.__paymentDate = otb.paymentDate;
+  }
+
+  get bill(){
+    return {
+      id : this.__id,
+      name: this.__name,
+      description: this.__description,
+      paymentAmount: this.__paymentAmount,
+      paymentDate: this.__paymentDate,
+      billType: 'OneTimeBill'
+    }
   }
 }

@@ -1,4 +1,6 @@
-export class Bill {
+
+
+export abstract class Bill{
 
   protected __id: number;
   protected __name: string;
@@ -46,4 +48,15 @@ export class Bill {
     this.__description = b.description;
     this.__paymentAmount = b.paymentAmount;
   }
+
+  get bill(){
+    return {
+      id : this.__id,
+      name: this.__name,
+      description: this.__description,
+      paymentAmount: this.__paymentAmount,
+      billType: 'Bill'
+    }
+  }
+
 }

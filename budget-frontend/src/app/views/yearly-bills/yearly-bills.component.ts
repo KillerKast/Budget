@@ -49,7 +49,7 @@ export class YearlyBillsComponent implements OnInit {
   }
 
   onSubmit() {
-    this.yearlyBill.updateYearlyBill(this.yearlyBillForm.value);
+    this.yearlyBill.updateBill(this.yearlyBillForm.value);
     console.log(this.yearlyBill);
     console.log("Submitted");
   }

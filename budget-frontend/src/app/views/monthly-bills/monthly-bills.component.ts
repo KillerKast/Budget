@@ -35,11 +35,8 @@ export class MonthlyBillsComponent implements OnInit {
   }
 
   onSubmit() {
-    this.monthlyBill.updateMonthlyBill(this.monthlyBillForm.value);
-    this.billService.testBillHttp();
-    this.billService.createBill(this.monthlyBill, 'monthly-bill');
-    console.log(this.monthlyBill);
-    console.log("Submitted");
+    this.monthlyBill.updateBill(this.monthlyBillForm.value);
+    this.billService.createBill(this.monthlyBill).subscribe();
   }
 
 }

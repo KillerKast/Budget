@@ -19,8 +19,19 @@ export class MonthlyBill extends Bill{
     this.__paymentDate = thePaymentDate;
   }
 
-  updateMonthlyBill(mb: MonthlyBill){
-    this.updateBill(mb);
+  updateBill(mb: MonthlyBill){
+    super.updateBill(mb);
     this.__paymentDate = mb.paymentDate;
+  }
+
+  get bill(){
+    return {
+      id : this.__id,
+      name: this.__name,
+      description: this.__description,
+      paymentAmount: this.__paymentAmount,
+      paymentDate: this.__paymentDate,
+      billType: 'MonthlyBill'
+    }
   }
 }
