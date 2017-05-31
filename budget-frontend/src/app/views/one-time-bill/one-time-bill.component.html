@@ -1,5 +1,5 @@
 <div class="ui-g-12">
-  <form (ngSubmit)="onSubmit()" [formGroup]="yearlyBillForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="oneTimeBillForm">
     <div class="ui-g-9">
       <label for="name">Name</label><br/>
       <input id="name"
@@ -24,26 +24,13 @@
       />
     </div>
     <br/>
-    <div class="ui-g-4">
-      <label for="paymentMonth" >Payment Month</label><br/>
-      <p-dropdown id="paymentMonth"
-             [options]="months"
-             [style]="{'width':'100%'}"
-             formControlName="paymentMonth"
-      ></p-dropdown>
+    <div class="ui-g-9">
+      <label for="paymentDate">Payment Date</label><br/>
+      <p-calendar id="paymentDate" formControlName="paymentDate" [showIcon]="true"></p-calendar>
     </div>
-    <div class="ui-g-1">
-      &nbsp;
-    </div>
+
     <div class="ui-g-4">
-      <label for="paymentDay">Payment Day</label><br/>
-      <input id="paymentDay"
-             pInputText
-             formControlName="paymentDay"
-      />
-    </div>
-    <div class="ui-g-4">
-      <button pButton type="submit" label="Save" [disabled]="!yearlyBillForm.valid"></button>
+      <button pButton type="submit" label="Save" [disabled]="!oneTimeBillForm.valid"></button>
     </div>
     <div class="ui-g-1">
       &nbsp;
