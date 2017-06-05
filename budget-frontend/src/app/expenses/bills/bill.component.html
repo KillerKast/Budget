@@ -1,0 +1,104 @@
+<div class="ui-g-12">
+  <form (ngSubmit)="onSubmit()" [formGroup]="billForm">
+    <div class="ui-g-9" *ngIf="!isNew">
+      <label for="nameDropdown">Name</label><br>
+      <p-dropdown id="nameDropdown"
+                  [style]="{'width':'100%'}"
+                  [options]="bills.options"
+                  formControlName="name"
+                  (onChange)="onBillsChange()"
+      >
+      </p-dropdown>
+    </div>
+
+    <div class="ui-g-9" *ngIf="isNew">
+      <label for="name">Name</label><br/>
+      <input id="name"
+             pInputText
+             formControlName="name"
+      />
+    </div>
+    <div class="ui-g-3" *ngIf="!isNew">
+      <br>
+      <button pButton type="button" icon="fa-plus" label="New" (click)="onNewEditClicked()"></button>
+    </div>
+    <div class="ui-g-3" *ngIf="isNew">
+      <br>
+      <button pButton type="button" icon="fa-edit" label="Pick Current" (click)="onNewEditClicked()"></button>
+    </div>
+    <br/>
+    <div class="ui-g-9">
+      <label for="description">Description</label><br/>
+      <input id="description"
+             pInputText
+             formControlName="description"
+      />
+    </div>
+    <br/>
+    <div class="ui-g-9">
+      <label for="paymentAmount">Payment Amount</label><br/>
+      <input id="paymentAmount"
+             pInputText
+             formControlName="paymentAmount"
+      />
+    </div>
+
+    <div id="monthlyBillItems" *ngIf="billType === 'monthly-bill'">
+      <br/>
+      <div class="ui-g-9">
+        <label for="monthlyPaymentDate">Payment Date</label><br/>
+        <input id="monthlyPaymentDate"
+               pInputText
+               formControlName="paymentDate"
+        />
+      </div>
+    </div>
+
+    <div id="yearlyBillItems" *ngIf="billType === 'yearly-bill'">
+      <br/>
+      <div class="ui-g-4">
+        <label for="paymentMonth">Payment Month</label><br/>
+        <input id="paymentMonth"
+               pInputText
+               formControlName="paymentMonth"
+        />
+      </div>
+      <div class="ui-g-1">&nbsp;</div>
+      <div class="ui-g-4">
+        <label for="paymentDay">Payment Day</label><br/>
+        <input id="paymentDay"
+               pInputText
+               formControlName="paymentDay"
+        />
+      </div>
+    </div>
+
+    <div id="oneTimeBillItems" *ngIf="billType === 'one-time-bill'">
+      <br/>
+      <div class="ui-g-9">
+        <label for="oneTimePaymentDate">Payment Date</label><br/>
+        <p-calendar id="oneTimePaymentDate"
+                    [monthNavigator]="true"
+                    [yearNavigator]="true"
+                    yearRange="2000:2060"
+                    formControlName="paymentDate"
+                    [style]="{'width':'100%'}"
+                    [inputStyle]="{'width':'100%'}"
+        ></p-calendar>
+      </div>
+    </div>
+
+
+    <div class="ui-g-4">
+      <button pButton type="submit" label="Save" [disabled]="billForm.pristine || billForm.invalid"></button>
+    </div>
+    <div class="ui-g-1">
+      &nbsp;
+    </div>
+    <div class="ui-g-4">
+      <button type="reset" pButton label="Reset"></button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,13 +1,13 @@
-import {Bill} from "./bill";
+import {Bill} from "./bill.model";
 
 export class MonthlyBill extends Bill{
 
   private __paymentDate: number;
 
-  constructor(name?: string, description?: string,
+  constructor(id?: string, name?: string, description?: string,
               paymentAmount?: number, paymentDate?: number){
 
-    super(name, description, paymentAmount);
+    super(id, name, description, paymentAmount);
     this.__paymentDate = paymentDate || null;
   }
 
@@ -21,17 +21,12 @@ export class MonthlyBill extends Bill{
 
   updateBill(mb: MonthlyBill){
     super.updateBill(mb);
-    this.__paymentDate = mb.paymentDate;
+    this.paymentDate = mb.paymentDate;
   }
 
-  get bill(){
-    return {
-      id : this.__id,
-      name: this.__name,
-      description: this.__description,
-      paymentAmount: this.__paymentAmount,
-      paymentDate: this.__paymentDate,
-      billType: 'MonthlyBill'
-    }
+  public getBill(){
+    let monthlyBill = super.getBill();
+    monthlyBill['paymentDate'] = this.paymentDate;
+    return monthlyBill;
   }
 }

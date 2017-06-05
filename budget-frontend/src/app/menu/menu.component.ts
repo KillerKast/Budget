@@ -19,9 +19,9 @@ export class MenuComponent implements OnInit {
       items: [
         {label: 'Bills',
           items: [
-            {label: 'Monthly', routerLink: ['/monthly-bill']},
-            {label: 'Yearly', routerLink: ['/yearly-bill']},
-            {label: 'One Time', routerLink: ['/one-time-bill']}
+            {label: 'Monthly', routerLink: ['bill','monthly-bill']},
+            {label: 'Yearly', routerLink: ['bill', 'yearly-bill']},
+            {label: 'One Time', routerLink: ['bill', 'one-time-bill']}
           ]
         },
         {label: 'Debts'},
