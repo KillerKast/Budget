@@ -7,16 +7,19 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const api = require('./server/routes/api');
-const billRoutes = require('./server/routes/bill');
+const api = require('./server/mongoose-routes/api');
 
-const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
+const billRoutes = (process.env.NODE_DATABASE === 'mongoose') ? require('./server/mongoose-routes/bill') : require('./server/sql-routes/bill');
+
+
+if(process.env.NODE_DATABASE === 'mongoose'){
+    const mongoose = require('mongoose');
+    mongoose.Promise = require('bluebird');
+    mongoose.connect('localhost:27017/killerkast-budget');
+}
+
 
 const app = express();
-
-mongoose.connect('localhost:27017/killerkast-budget');
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -24,7 +27,6 @@ app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/api', api);
 app.use('/bills', billRoutes);
 
 
