@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Node_Modules" level="project" />
+    <orderEntry type="library" name="MyPackages" level="project" />
   </component>
 </module>
