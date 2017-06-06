@@ -4,10 +4,10 @@
 var express = require('express');
 var billRouter = express.Router();
 
-var db = require('../sql-model/database-connection');
-var mbr = require('../sql-model/repository/monthly-bill-repository');
-var otbr = require('../sql-model/repository/one-time-bill-repository');
-var ybr = require('../sql-model/repository/yearly-bill-repository');
+var db = require('../model/database-connection');
+var mbr = require('../model/repository/monthly-bill-repository');
+var otbr = require('../model/repository/one-time-bill-repository');
+var ybr = require('../model/repository/yearly-bill-repository');
 
 
 billRouter.get('/:billType', function(req, res, next){

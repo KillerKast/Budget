@@ -24,7 +24,12 @@ export class MenuComponent implements OnInit {
             {label: 'One Time', routerLink: ['bill', 'one-time-bill']}
           ]
         },
-        {label: 'Debts'},
+        {label: 'Debts',
+          items: [
+            {label: 'Interest Baring Debt', routerLink: ['debt','interest-baring-debt']},
+            {label: 'Interest Free Debt', routerLink: ['debt', 'interest-free-debt']},
+            {label: 'Payment Plans', routerLink: ['debt', 'payment-plan']}
+          ]},
         {label: 'Daily'}
       ]
     },

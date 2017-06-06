@@ -3,9 +3,9 @@
  */
 const express = require('express');
 const billRouter = express.Router();
-const mbr = require('../mongoose-model/repositories/monthly-bill-repository');
-const ybr = require('../mongoose-model/repositories/yearly-bill-repository');
-const otbr = require('../mongoose-model/repositories/one-time-bill-repository');
+const mbr = require('../model/repositories/monthly-bill-repository');
+const ybr = require('../model/repositories/yearly-bill-repository');
+const otbr = require('../model/repositories/one-time-bill-repository');
 
 billRouter.get('/:billType', function(req, res, next){
   const billType = req.params.billType;
