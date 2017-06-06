@@ -1,0 +1,34 @@
+<h1>{{debtType}}</h1>
+<div class="ui-g-12">
+  <form  (ngSubmit)="onSubmit" formGroup="debtForm">
+    <div class="ui-g-9">
+      <label for="name">Name</label><br>
+      <input type="text" id="name" formControlName="name"/>
+    </div>
+    <div class="ui-g-9">
+      <label for="description">Description</label><br>
+      <input type="text" id="description" formControlName="description" />
+    </div>
+    <div class="ui-g-9">
+      <label for="paymentAmount">Payment Amount</label><br>
+      <input type="text" id="paymentAmount" formControlName="paymentAmount" />
+    </div>
+    <div class="ui-g-9">
+      <label for="paymentDate">Payment Date</label><br>
+      <input type="text" id="paymentDate" formControlName="paymentDate"/>
+    </div>
+    <div class="ui-g-9">
+      <label for="startingBalance">Starting Balance</label><br>
+      <input type="text" id="startingBalance" formControlName="startingBalance" />
+    </div>
+    <div class="ui-g-9">
+      <label for="annualPercentageRate">APR</label><br>
+      <input type="text" id="annualPercentageRate" formControlName="apr"/>
+    </div>
+    <div class="ui-g-9">
+      <label for="lastPaymentDate">Last Payment Date</label><br>
+      <input type="text" id="lastPaymentDate" formControlName="lastPaymentDate"/>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
