@@ -14,11 +14,13 @@ import { HeaderComponent } from './header/header.component';
 import {BillComponent} from "./expenses/bills/bill.component";
 import {routing} from "./routes/budget.routes";
 import {ReactiveFormsModule} from "@angular/forms";
+import {DebtComponent} from "./expenses/debts/debt.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     BillComponent,
+    DebtComponent,
     MenuComponent,
     HeaderComponent
   ],
