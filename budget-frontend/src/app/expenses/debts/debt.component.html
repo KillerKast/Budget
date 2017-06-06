@@ -3,32 +3,32 @@
   <form  (ngSubmit)="onSubmit" formGroup="debtForm">
     <div class="ui-g-9">
       <label for="name">Name</label><br>
-      <input type="text" id="name" formControlName="name"/>
+      <input type="text" pInput id="name" formControlName="name"/>
     </div>
     <div class="ui-g-9">
       <label for="description">Description</label><br>
-      <input type="text" id="description" formControlName="description" />
+      <input type="text" pInput id="description" formControlName="description" />
     </div>
     <div class="ui-g-9">
       <label for="paymentAmount">Payment Amount</label><br>
-      <input type="text" id="paymentAmount" formControlName="paymentAmount" />
+      <input type="text" pInput id="paymentAmount" formControlName="paymentAmount" />
     </div>
     <div class="ui-g-9">
       <label for="paymentDate">Payment Date</label><br>
-      <input type="text" id="paymentDate" formControlName="paymentDate"/>
+      <input type="text" pInput id="paymentDate" formControlName="paymentDate"/>
     </div>
     <div class="ui-g-9">
       <label for="startingBalance">Starting Balance</label><br>
-      <input type="text" id="startingBalance" formControlName="startingBalance" />
+      <input type="text" pInput id="startingBalance" formControlName="startingBalance" />
     </div>
     <div class="ui-g-9">
       <label for="annualPercentageRate">APR</label><br>
-      <input type="text" id="annualPercentageRate" formControlName="apr"/>
+      <input type="text" pInput id="annualPercentageRate" formControlName="apr"/>
     </div>
-    <div class="ui-g-9">
+    <div class="ui-g-9" *ngIf="debtType">
       <label for="lastPaymentDate">Last Payment Date</label><br>
-      <input type="text" id="lastPaymentDate" formControlName="lastPaymentDate"/>
+      <input type="text" pInput id="lastPaymentDate" formControlName="lastPaymentDate"/>
     </div>
-    <button type="submit">Submit</button>
+    <button pButton type="submit">Submit</button>
   </form>
 </div>
