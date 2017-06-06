@@ -28,15 +28,18 @@ billRouter.get('/:billType', function(req, res, next){
     });
   }
 
-  readReturn.then(function(bills){
+  readReturn.then(bills => {
+    console.log("SavedBills: " + bills);
     return res.status(200).json({
       success: 'success',
       obj: bills,
     })
   }).catch(function(error){
+    console.log(error);
+    console.log("WTF");
     return res.status(500).json({
       success: 'no-success',
-      message: error._message
+      message: error
     })
   });
 });
@@ -59,10 +62,10 @@ billRouter.post('/:billType', function(req, res, next){
     });
   }
   saveReturn.then(function(savedBill){
-    console.log(savedBill);
+
     return res.status(201).json({
       success: 'success',
-      obj: savedBill.dataValues,
+      obj: savedBill
     })
   }).catch(function(error){
     return res.status(500).json({

@@ -24,4 +24,15 @@ ybr.createBill = function(yb){
     });
 };
 
+ybr.readBills = function () {
+	return db.sequelize.sync().then(() => {
+		return YearlyBill.findAll({raw: true}).then(yearlyBills => {
+			return yearlyBills
+		})
+			.catch((error) => {
+				throw(error);
+			});
+	});
+};
+
 module.exports = ybr;

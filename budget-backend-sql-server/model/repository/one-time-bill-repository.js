@@ -8,12 +8,11 @@ const otbr = {}
 
 otbr.createBill = function(otb){
   otbObj = {
-    name: Sequelize.STRING,
-    description: Sequelize.STRING,
-    paymentAmount: Sequelize.DOUBLE,
-    paymentDate: DATE,
-  }
-
+    name: otb.name,
+    description: otb.description,
+    paymentAmount: otb.paymentAmount,
+    paymentDate: otb.paymentDate,
+  };
 
   return db.sequelize.sync().then(() => OneTimeBill.create(otbObj))
     .then(createdOneTimeBill => {
@@ -24,6 +23,15 @@ otbr.createBill = function(otb){
     });
 };
 
+otbr.readBills = function () {
+	return db.sequelize.sync().then(() => {
+		return OneTimeBill.findAll({raw: true}).then(oneTimeBills => {
+			return oneTimeBills
+		})
+        .catch((error) => {
+            throw(error);
+        });
+	});
+};
+
 module.exports = otbr;
-
-
